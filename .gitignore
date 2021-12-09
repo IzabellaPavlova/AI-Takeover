@@ -1,0 +1,10 @@
+/build
+/.vscode
+/tests/build
+*Zone.Identifier
+/cmake-build-debug
+.idea
+/Level/build
+/Game/build
+/Level/cmake-build-debug
+/Game/cmake-build-debug

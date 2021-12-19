@@ -7,6 +7,9 @@
 #include "SFML/Window.hpp"
 #include <vector>
 #include <string>
+#include <sstream>
+#include <fstream>
+#include <boost/lexical_cast.hpp>
 
 class Level : public sf::Drawable, public sf::Transformable
 {
@@ -34,9 +37,9 @@ public:
 
     void update(sf::Time);
 
-    bool isFinished();
+    bool isFinished() const;
 
-    bool isDead();
+    bool isDead() const;
 
     Map &getMap();
     Hero &getHero();
@@ -45,6 +48,12 @@ public:
 private:
     virtual void draw(sf::RenderTarget &, sf::RenderStates) const;
     void readLevelFile(const size_t);
+    void readScoreFile(const size_t num_of_level);
+
+    void changeScore();
+
+    int m_best_score;
+    float m_best_game_time;
 
     sf::RenderWindow &m_window;
     Map m_map;
@@ -52,4 +61,5 @@ private:
     Finish m_finish;
     Camera<Hero> m_camera;
 
+    size_t m_level_num;
 };

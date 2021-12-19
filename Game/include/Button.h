@@ -13,14 +13,14 @@ public:
 
     ~Button();
 
-    sf::Vector2f getSize() const;
-    void setPosition(const sf::Vector2f &pos, const float windowWidth);
-    void setWidth(const float width);
-    bool isPressed(sf::Vector2f mousePos) const;
+    sf::Vector2f getSize() const noexcept;
+    void setPosition(const sf::Vector2f &pos, const float windowWidth) noexcept;
+    void setWidth(const float width) noexcept;
+    bool isPressed(sf::Vector2f mousePos) const noexcept;
 
 private:
-    sf::Vector2f getTextSize() const;
-    virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
+    sf::Vector2f getTextSize() const noexcept;
+    virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const noexcept;
 
     sf::Sprite m_sprite;
     sf::Text m_text;

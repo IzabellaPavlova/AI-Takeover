@@ -2,7 +2,7 @@
 
 int main()
 {
-    Game game;
+    Game game("../Files/");
     game.run();
 
     return 0;

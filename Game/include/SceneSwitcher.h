@@ -11,5 +11,5 @@ public:
     SceneSwitcher &operator=(const SceneSwitcher &) = delete;
     SceneSwitcher &operator=(SceneSwitcher &&) noexcept = delete;
 
-    virtual void switchTo(const SceneType) = 0;
+    virtual void switchTo(const SceneType) noexcept = 0;
 };

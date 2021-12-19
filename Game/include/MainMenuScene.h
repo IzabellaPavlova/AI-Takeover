@@ -11,17 +11,22 @@
 class MainMenuScene : public Scene
 {
 public:
-    MainMenuScene(sf::RenderWindow &, SceneSwitcher &);
+    MainMenuScene(sf::RenderWindow &,
+                  SceneSwitcher &,
+                  const std::string &file_prefix = "",
+                  const std::string &background_file_name = "MainMenuBackground.png",
+                  const std::string &font_file_name = "arial.ttf",
+                  const std::string &texture_file_name = "ButtonTexture.png");
     ~MainMenuScene();
     MainMenuScene(const MainMenuScene &) = delete;
     MainMenuScene(MainMenuScene &&) noexcept = delete;
     MainMenuScene &operator=(const MainMenuScene &) = delete;
     MainMenuScene &operator=(MainMenuScene &&) noexcept = delete;
 
-    void handleEvents(const sf::Event &event);
-    void handleInput();
-    void update(sf::Time);
-    void draw() const;
+    void handleEvents(const sf::Event &event) noexcept;
+    void handleInput() noexcept;
+    void update(const sf::Time) noexcept;
+    void draw() const noexcept;
 
 private:
     sf::RenderWindow &m_window;

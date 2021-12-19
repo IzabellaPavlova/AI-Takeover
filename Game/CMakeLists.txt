@@ -21,6 +21,5 @@ set(SOURCE src/Gui.cpp
 
 add_library(Game STATIC ${SOURCE} ${HEADERS})
 
-
 target_include_directories(Game PUBLIC "${PROJECT_BINARY_DIR}" "${PROJECT_SOURCE_DIR}/../Level/include")
 target_link_libraries(Game sfml-graphics sfml-window sfml-system Level)

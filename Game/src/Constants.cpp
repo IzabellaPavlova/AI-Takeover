@@ -3,7 +3,7 @@
 Constants::Constants() {}
 Constants::~Constants() {}
 
-bool Constants::read_file(const std::string &f_name /* =".config" */)
+bool Constants::read_file(const std::string &f_name /* =".config" */) noexcept
 {
     std::string line;
     std::ifstream file(f_name);

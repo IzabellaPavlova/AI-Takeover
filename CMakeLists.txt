@@ -10,5 +10,5 @@ add_subdirectory(Game)
 
 add_executable(main Main.cpp ${SOURCE} ${HEADERS})
 
-target_link_libraries(main sfml-graphics sfml-window sfml-system Level Game)
+target_link_libraries(main sfml-graphics sfml-window sfml-system Game)
 target_include_directories(main PUBLIC "${PROJECT_BINARY_DIR}" "${PROJECT_SOURCE_DIR}/Game/include")

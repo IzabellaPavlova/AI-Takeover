@@ -16,7 +16,7 @@ public:
     Constants &operator=(const Constants &) = delete;
     Constants &operator=(Constants &&) noexcept = delete;
 
-    bool read_file(const std::string &f_name = ".config");
+    bool read_file(const std::string &f_name = ".config") noexcept;
     float at(const std::string &key) const;
 
 private:

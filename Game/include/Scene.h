@@ -14,8 +14,8 @@ public:
     Scene &operator=(const Scene &) = delete;
     Scene &operator=(Scene &&) noexcept = delete;
 
-    virtual void handleEvents(const sf::Event &event) = 0;
-    virtual void handleInput() = 0;
-    virtual void update(sf::Time) = 0;
-    virtual void draw() const = 0;
+    virtual void handleEvents(const sf::Event &event) noexcept = 0;
+    virtual void handleInput() noexcept = 0;
+    virtual void update(const sf::Time) noexcept = 0;
+    virtual void draw() const noexcept = 0;
 };

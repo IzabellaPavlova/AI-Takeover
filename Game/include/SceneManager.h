@@ -10,25 +10,28 @@
 class SceneManager : public SceneSwitcher
 {
 public:
-    SceneManager(sf::RenderWindow &, const Constants &);
+    SceneManager(sf::RenderWindow &, const Constants &, const std::string &file_prefix = "");
     ~SceneManager();
     SceneManager(const SceneManager &) = delete;
     SceneManager(SceneManager &&) noexcept = delete;
     SceneManager &operator=(const SceneManager &) = delete;
     SceneManager &operator=(SceneManager &&) noexcept = delete;
 
-    bool cycle(sf::Time);
-    void draw() const;
-    void setLevel(const size_t);
-    void switchTo(const SceneType);
+    bool cycle(const sf::Time) noexcept;
+    void draw() const noexcept;
+    void setLevel(const size_t) noexcept;
+    void switchTo(const SceneType) noexcept;
+    bool successfullyInitialized() const noexcept;
 
 private:
-    void changeScene();
-    void handleEvents();
+    void changeScene() noexcept;
+    void handleEvents() noexcept;
 
     std::array<std::unique_ptr<Scene>, 4> m_scenes;
     sf::RenderWindow &m_window;
     Constants m_constants;
     SceneType m_curScene, m_sceneToSwitch;
     size_t m_numOfLevel;
+    bool m_initializationSuccess;
+    const std::string m_filePrefix;
 };

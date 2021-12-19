@@ -14,34 +14,34 @@ Button::~Button()
 {
 }
 
-sf::Vector2f Button::getSize() const
+sf::Vector2f Button::getSize() const noexcept
 {
     return sf::Vector2f(m_sprite.getGlobalBounds().width,
                         m_sprite.getGlobalBounds().height);
 }
 
-void Button::setPosition(const sf::Vector2f &pos, const float windowWidth)
+void Button::setPosition(const sf::Vector2f &pos, const float windowWidth) noexcept
 {
     m_sprite.setPosition(pos);
     m_text.setPosition((windowWidth - m_text.getGlobalBounds().width) / 2, pos.y + m_text.getGlobalBounds().height / 2);
 }
 
-void Button::setWidth(const float width)
+void Button::setWidth(const float width) noexcept
 {
     m_sprite.scale(width / m_sprite.getGlobalBounds().width, 1.f);
 }
 
-bool Button::isPressed(sf::Vector2f mousePos) const
+bool Button::isPressed(sf::Vector2f mousePos) const noexcept
 {
     return m_sprite.getGlobalBounds().contains(mousePos.x, mousePos.y);
 }
 
-sf::Vector2f Button::getTextSize() const
+sf::Vector2f Button::getTextSize() const noexcept
 {
     return sf::Vector2f(m_text.getGlobalBounds().width, m_text.getGlobalBounds().height);
 }
 
-void Button::draw(sf::RenderTarget &target, sf::RenderStates states) const
+void Button::draw(sf::RenderTarget &target, sf::RenderStates states) const noexcept
 {
     target.draw(m_sprite);
     target.draw(m_text);

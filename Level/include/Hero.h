@@ -39,9 +39,9 @@ public:
 
     void update(sf::Time dt);
 
-    bool isFinished();
+    bool isFinished() const;
 
-    bool isDead();
+    bool isDead() const;
 
 private:
     virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;

@@ -1,0 +1,17 @@
+/build
+/.vscode
+/tests/build
+*Zone.Identifier
+/cmake-build-debug
+.idea
+/Level/build
+/Game/build
+/test/build
+/Level/cmake-build-debug
+/Game/cmake-build-debug
+/Files/results_1.txt
+/Files/results_2.txt
+/Files/results_3.txt
+/Files/results_4.txt
+/Files/results_5.txt
+text.txt

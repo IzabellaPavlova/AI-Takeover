@@ -1,0 +1,65 @@
+name: CI
+
+on:
+
+  push:
+
+  pull_request:
+    branches: [ Develop ]
+ 
+jobs:
+
+  build:
+  
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: update all
+        run: sudo apt-get update
+
+      - name: Install xvfb
+        run: sudo apt-get -y install xvfb
+
+      - name: Install boost
+        run: sudo apt-get install -f libboost-all-dev
+
+      - name: Install sfml
+        run: sudo apt-get install libsfml-dev
+    
+      - name: Install gtest
+        run: sudo apt-get install libgtest-dev
+      
+      - name: Install vilgrind
+        run: sudo apt update && sudo apt install valgrind
+
+      - name: Install cppcheck
+        run: sudo apt-get install cppcheck
+
+      - name: run cppcheck
+        run: |
+         cppcheck Game
+         cppcheck Level
+        
+      - name: configure
+        run: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-Werror" ..
+
+      - name: configure_test
+        run: cd test && mkdir build && cd build && cmake ..
+        
+      - name: make
+        run: cd build && make
+
+      - name: make_test
+        run: cd test/build && make
+
+      - name: Run test without valgrind
+        run: |
+         cd test/build
+         xvfb-run -a ./test
+        
+      - name: Run vilgrind
+        run: |
+         cd test/build
+         xvfb-run -a valgrind --leak-check=full ./test

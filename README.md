@@ -1,24 +1,8 @@
-# AI-Takeover | BBB - Burning But Balanced
-A platformer game in which the player competes with AI 
+![CI](https://github.com/IzabellaPavlova/AI-Takeover/actions/workflows/blank.yml/badge.svg)
 
-   
+# AI-Takeover
+Игра платформер в стиле Марио
 
-## Team:
-
-Izabella Pavlova: https://github.com/IzabellaPavlova
-
-Andrey Lisin: https://github.com/TimFoxers
-
-Julia Korpusova: https://github.com/julia-kv
-
-Egor Sergeev: https://github.com/egor-sergeev-n
-
-   
-
-## Few rules:
-
-! Make all commits in English
-
-! Come up with clear branches names and commits
-
-! Don't commit in other team members branches
+## Team
+Библиотека Level: Корпусова Юлия https://github.com/julia-kv \
+Библиотека Game: Сергеев Егор https://github.com/egor-sergeev-n
